@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <title>Elsatic Material - Demo</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      #canvas {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        position: fixed;
+      }
+      .demos-container {
+        width: 100vw;
+        height: 100vh;
+      }
+      .demos {
+        width: 100%;
+        height: 23vh;
+        position: fixed;
+        bottom: 0;
+        display: flex;
+        justify-content: end;
+      }
+      .demo {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        cursor: pointer;
+      }
+      .demo-image {
+        height: 100%;
+        overflow: hidden;
+        border: 2px solid black;
+      }
+      .demo-image img {
+        height: 100%;
+        filter: grayscale(80%);
+        object-fit: fill;
+        transition: transform 0.5s ease, filter 0.5s linear;
+      }
+      .demo-image:hover img {
+        transform: scale(1.5);
+        filter: grayscale(0%);
+      }
+      .demo-title {
+        pointer-events: none;
+        position: absolute;
+        color: white;
+        background: rgba(0, 0, 0, 0.507);
+        width: 100%;
+        bottom: 0;
+        text-align: center;
+        padding: 1rem;
+        font-weight: bolder;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="canvas"></div>
+    <div class="demos-container">
+      <div class="demos">
+        <div class="demo" id="piplup">
+          <div class="demo-image">
+            <img src="./images/piplup-thumb.png" />
+          </div>
+          <div class="demo-title">
+            <p>Piplup</p>
+          </div>
+        </div>
+        <div class="demo" id="snorlax">
+          <div class="demo-image">
+            <img src="./images/snorlax-thumb.png" />
+          </div>
+          <div class="demo-title">
+            <p>Snorlax</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
